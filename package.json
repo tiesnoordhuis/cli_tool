@@ -1,0 +1,24 @@
+{
+  "name": "cli_tool",
+  "version": "1.0.0",
+  "description": "script for preforming complex cli actions to assist my work",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tiesnoordhuis/cli_tool.git"
+  },
+  "keywords": [
+    "cli",
+    "node",
+    "typescript"
+  ],
+  "author": "Ties",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiesnoordhuis/cli_tool/issues"
+  },
+  "homepage": "https://github.com/tiesnoordhuis/cli_tool#readme"
+}
