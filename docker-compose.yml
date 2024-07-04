@@ -1,0 +1,34 @@
+version: '3'
+services:
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: review-php
+    ports:
+      - "8080:80"
+    volumes:
+      - source-repository:/var/www/html
+    links:
+      - mysql
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    container_name: review-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_USER: bit_academy
+      MYSQL_PASSWORD: bit_academy
+    volumes:
+      - source-repository:/home
+
+volumes:
+  source-repository:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/ties/Projects/bit-academy/Students/Repository/Almost-there-9c9c5de3-78645473/

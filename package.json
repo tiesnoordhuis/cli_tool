@@ -4,7 +4,7 @@
   "description": "script for preforming complex cli actions to assist my work",
   "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx tsx main.ts"
   },
   "repository": {
     "type": "git",
@@ -16,9 +16,12 @@
     "typescript"
   ],
   "author": "Ties",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tiesnoordhuis/cli_tool/issues"
   },
-  "homepage": "https://github.com/tiesnoordhuis/cli_tool#readme"
+  "homepage": "https://github.com/tiesnoordhuis/cli_tool#readme",
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "type": "module"
 }
