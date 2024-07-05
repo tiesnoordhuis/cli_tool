@@ -2,9 +2,12 @@
   "name": "cli_tool",
   "version": "1.0.0",
   "description": "script for preforming complex cli actions to assist my work",
-  "main": "main.ts",
+  "main": "src/main.ts",
+  "bin": {
+    "cli_tool": "./bin/wrapper.js"
+  },
   "scripts": {
-    "start": "npx tsx main.ts"
+    "start": "npx tsx bin/main.ts"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,9 @@
   "devDependencies": {
     "typescript": "^5.5.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@inquirer/prompts": "^5.1.2",
+    "@types/node": "^20.14.9"
+  }
 }

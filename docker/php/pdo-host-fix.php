@@ -15,7 +15,7 @@ try {
     die('Error: Could not open directory: ' . $e->getMessage());
 }
 
-define('PATTERN', '/new\s+PDO\s?\((?<arg1>[\w$]+)/');
+define('PATTERN', '/new\s+PDO\s?\((?<arg1>(?<quote>["\']?)((?!__dsnWrapper)[\w$;:=]+)(\k<quote>))/');
 
 // Traverse all php files in directory
 foreach (new RecursiveIteratorIterator($directory) as $filename => $file) {

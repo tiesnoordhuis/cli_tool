@@ -31,4 +31,4 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/ties/Projects/bit-academy/Students/Repository/Almost-there-9c9c5de3-78645473/
+      device: ${REPO_SOURCE}
