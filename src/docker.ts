@@ -1,5 +1,5 @@
 import { spawn } from 'child_process';
-import { askRepository } from './prompts';
+import { locationOptions } from './prompts';
 import { fileURLToPath } from 'url';
 import { logStream } from './logging';
 
@@ -7,7 +7,7 @@ const dockerPath = fileURLToPath(new URL('../docker/', import.meta.url));
 
 const composeDown = async ():Promise<void> => {
     return new Promise((resolve, reject) => {
-        const composeDownProcess = spawn('docker', ['compose', '--project-directory', dockerPath, 'down'], {
+        const composeDownProcess = spawn('docker', ['compose', '--project-directory', dockerPath, 'down', '--volumes'], {
             stdio: 'inherit',
         });
     
@@ -15,7 +15,7 @@ const composeDown = async ():Promise<void> => {
             if (code === 0) {
                 resolve();
             } else {
-                reject();
+                reject(`composeDownProcess exited with code ${code}`);
             }
         });
     });
@@ -31,7 +31,7 @@ const composeBuild = async ():Promise<void> => {
             if (code === 0) {
                 resolve();
             } else {
-                reject();
+                reject(`composeBuildProcess exited with code ${code}`);
             }
         });
     });
@@ -39,8 +39,11 @@ const composeBuild = async ():Promise<void> => {
 
 const composeUp = async ():Promise<void> => {
     return new Promise(async(resolve, reject) => {
-        askRepository()
+        locationOptions()
+            .then((askLocation) => askLocation())
             .then((repository) => {
+                console.log('Repository: ', repository);
+                
                 const composeUpProcess = spawn('docker', ['compose', '--project-directory', dockerPath, 'up'], {
                     env: {
                         ...process.env,
@@ -58,11 +61,11 @@ const composeUp = async ():Promise<void> => {
                     if (code === 0) {
                         resolve();
                     } else {
-                        reject();
+                        reject(`composeUpProcess exited with code ${code}`);
                     }
                 })
             }).catch((error) => {
-                    console.error('Error: ', error);
+                reject(error);
             });
     });
 }
@@ -73,7 +76,7 @@ const composeRestart = async ():Promise<void> => {
             .then(() => composeBuild())
             .then(() => composeUp())
             .then(() => resolve())
-            .catch(() => reject());
+            .catch((error) => reject(error));
     });
 }
 

@@ -8,7 +8,7 @@ const { values } = parseArgs({
         'skip': {
             type: 'boolean',
             short: 's',
-        }
+        },
     }
 });
 
@@ -25,18 +25,34 @@ const action: actionType = values?.skip ? 'restart' : await select({
     ],
 });
 
-// switch between cases
-switch (action) {
-    case 'down':
-        composeDown();
-        break;
-    case 'up':
-        composeUp()
-        break;
-    case 'build':
-        composeBuild();
-        break;
-    case 'restart':
-        composeRestart();
-        break;
+try {
+    // switch between cases
+    switch (action) {
+        case 'down':
+            composeDown()
+                .catch((error) => {
+                    console.trace('Error: ', error);
+                });
+            break;
+        case 'up':
+            composeUp()
+                .catch((error) => {
+                    console.trace('Error: ', error);
+                });
+            break;
+        case 'build':
+            composeBuild()
+                .catch((error) => {
+                    console.trace('Error: ', error);
+                });
+            break;
+        case 'restart':
+            composeRestart()
+                .catch((error) => {
+                    console.trace('Error: ', error);
+                });
+            break;
+    }
+} catch (error) {
+    console.error('Error: ', error);
 }
