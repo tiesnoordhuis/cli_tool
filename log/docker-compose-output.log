@@ -1,0 +1,40 @@
+Attaching to review-mysql, review-node, review-php
+review-node   | ==> /dev/null <==
+review-mysql  | 2024-07-16 16:49:32+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.1-1.el9 started.
+review-mysql  | 2024-07-16 16:49:32+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+review-mysql  | 2024-07-16 16:49:32+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.1-1.el9 started.
+review-mysql  | 2024-07-16 16:49:32+00:00 [Note] [Entrypoint]: Initializing database files
+review-mysql  | 2024-07-16 16:49:37+00:00 [Note] [Entrypoint]: Database files initialized
+review-mysql  | 2024-07-16 16:49:37+00:00 [Note] [Entrypoint]: Starting temporary server
+review-mysql  | 2024-07-16 16:49:37+00:00 [Note] [Entrypoint]: Temporary server started.
+review-mysql  | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+review-mysql  | 2024-07-16 16:49:38+00:00 [Note] [Entrypoint]: Creating user bit_academy
+review-mysql  | 
+review-mysql  | 2024-07-16 16:49:39+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/post-init-run-extra-sql.sh
+review-mysql  | Executing /home/import.sql
+review-mysql  | 
+review-mysql  | 2024-07-16 16:49:39+00:00 [Note] [Entrypoint]: Stopping temporary server
+review-mysql  | 2024-07-16 16:49:41+00:00 [Note] [Entrypoint]: Temporary server stopped
+review-mysql  | 
+review-mysql  | 2024-07-16 16:49:41+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+review-mysql  | 
+Attaching to review-mysql, review-node, review-php
+review-node   | ==> /dev/null <==
+review-mysql  | 2024-07-16 16:50:19+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.1-1.el9 started.
+review-mysql  | 2024-07-16 16:50:19+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+review-mysql  | 2024-07-16 16:50:19+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.1-1.el9 started.
+review-mysql  | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+Attaching to review-mysql, review-node, review-php
+review-node   | ==> /dev/null <==
+Attaching to review-mysql, review-node, review-php
+review-node   | ==> /dev/null <==
+Attaching to review-mysql, review-node, review-php
+Attaching to review-mysql, review-node, review-php
+review-node   | ==> /dev/null <==
+Attaching to review-mysql, review-node, review-php
+Attaching to review-mysql, review-node, review-php
+review-node   | ==> /dev/null <==
+review-mysql  | 2024-07-16 17:42:56+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.1-1.el9 started.
+review-mysql  | 2024-07-16 17:42:57+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+review-mysql  | 2024-07-16 17:42:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.1-1.el9 started.
+review-mysql  | 2024-07-16 17:42:57+00:00 [Note] [Entrypoint]: Initializing database files
